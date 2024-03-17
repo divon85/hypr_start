@@ -148,7 +148,7 @@ fi
 # Install packages 
 # PLEASE NOTE: Add more packages at the corresponding file
 source .install/general-packages.sh
-source .install/packages/hyprland-packages.sh
+source .install/hyprland-packages.sh
 
 # Copy configuration
 if gum confirm "DO YOU WANT TO COPY THE PREPARED dotfiles INTO .config? (YOU CAN ALSO DO THIS MANUALLY)" ;then
