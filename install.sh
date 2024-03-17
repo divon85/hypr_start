@@ -146,9 +146,12 @@ else
 fi
 
 # Install packages 
-# PLEASE NOTE: Add more packages at the corresponding file
-source .install/general-packages.sh
-source .install/hyprland-packages.sh
+# PLEASE NOTE: Add more packages at the end of the following command
+sudo pacman -S pacman-contrib bluez bluez-utils neovim wget unzip alacritty rofi dunst starship freerdp thunar mousepad noto-fonts otf-font-awesome ttf-fira-sans ttf-fira-code ttf-firacode-nerd figlet vlc eza python-pip python-psutil python-rich python-click pavucontrol tumbler blueman papirus-icon-theme breeze-icons polkit-gnome brightnessctl gum man-pages nm-connection-editor gvfs xdg-user-dirs networkmanager network-manager-applet xarchiver thunar-archive-plugin zip fuse2 gtk4 libadwaita python-pywal xdg-desktop-portal qalculate-gtk imagemagick guvcview hyprland xdg-desktop-portal-hyprland waybar grim slurp swappy cliphist
+
+# Install yay packages
+# PLEASE NOTE: Add more packages at the end of the following command
+yay -S pfetch bibata-cursor-theme trizen pacseek google-chrome swww wlogout nwg-look emote hypridle hyprlock
 
 # Copy configuration
 if gum confirm "DO YOU WANT TO COPY THE PREPARED dotfiles INTO .config? (YOU CAN ALSO DO THIS MANUALLY)" ;then
