@@ -56,4 +56,5 @@ packagesYay=(
     "bibata-cursor-theme"
     "trizen"
     "pacseek"
+    "google-chrome"
 );
