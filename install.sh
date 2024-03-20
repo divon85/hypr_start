@@ -41,3 +41,4 @@ source .install/install-packages.sh
 source .install/packages/hyprland-packages.sh
 source .install/install-packages.sh
 source .install/wallpaper.sh
+source .install/displaymanager.sh
