@@ -3,7 +3,7 @@
 
 datets=$(date '+%Y%m%d%H%M%S')
 if [ -d ~/.dotfiles ] || [ -f ~/.bashrc ]; then
-echo -e "${GREEN}"
+echo -e "${BLUE}"
 figlet "Backup"
 echo -e "${NONE}"
     if [ -d ~/.dotfiles ]; then

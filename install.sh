@@ -35,3 +35,9 @@ source .install/backup.sh
 source .install/preparation.sh
 source .install/installer.sh
 source .install/remove.sh
+source .install/general.sh
+source .install/packages/general-packages.sh
+source .install/install-packages.sh
+source .install/packages/hyprland-packages.sh
+source .install/install-packages.sh
+source .install/wallpaper.sh

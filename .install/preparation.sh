@@ -1,5 +1,5 @@
 # Prepare dotfiles
-echo -e "${GREEN}"
+echo -e "${BLUE}"
 figlet "Preparation"
 echo -e "${NONE}"
 if [ -d ~/.config ]; then

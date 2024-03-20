@@ -1,5 +1,5 @@
 # Check if yay is installed
-echo -e "${GREEN}"
+echo -e "${BLUE}"
 figlet "yay"
 echo -e "${NONE}"
 if sudo pacman -Qs yay > /dev/null ; then
