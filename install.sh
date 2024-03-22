@@ -42,3 +42,13 @@ source .install/packages/hyprland-packages.sh
 source .install/install-packages.sh
 source .install/wallpaper.sh
 source .install/displaymanager.sh
+source .install/issue.sh
+source .install/restore.sh
+source .install/keyboard.sh
+source .install/neovim.sh
+source .install/hook.sh
+source .install/copy.sh
+source .install/init-pywal.sh
+source .install/hyprland-dotfiles.sh
+source .install/settings.sh
+source .install/gtk.sh

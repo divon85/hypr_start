@@ -5,11 +5,11 @@ figlet "Wallpapers"
 echo -e "${NONE}"
 if [ ! -d ~/Pictures ]; then
     echo "Create Pictures folder for wallpapers"
-    mkdir Pictures
+    mkdir ~/Pictures
 fi
 if [ ! -d ~/Pictures/wallpaper ]; then
-    mkdir ~/wallpaper
-    cp wallpapers/* ~/Pictures/wallpaper
+    mkdir ~/Pictures/wallpaper
+    cp ../wallpapers/* ~/Pictures/wallpaper
     echo "Wallpapers installed successfully."
 else
     echo ":: ~/wallpaper folder already exists."
