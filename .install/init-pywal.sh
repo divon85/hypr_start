@@ -2,7 +2,7 @@
 
 if [ ! -f ~/.cache/wal/colors-hyprland.conf ]; then
     _installSymLink wal ~/.config/wal ~/.dotfiles/wal/ ~/.config
-    wal -i ~/.dotfiles/wallpapers/default.jpg
+    wal -i ~/.dotfiles/wallpaper/default.jpg
     echo "Pywal and templates activated."
     echo ""
 else
