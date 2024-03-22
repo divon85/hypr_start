@@ -52,3 +52,6 @@ source .install/init-pywal.sh
 source .install/hyprland-dotfiles.sh
 source .install/settings.sh
 source .install/gtk.sh
+source .install/bashrc.sh
+source .install/cleanup.sh
+source .install/reboot.sh
