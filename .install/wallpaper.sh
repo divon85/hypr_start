@@ -9,7 +9,7 @@ if [ ! -d ~/Pictures ]; then
 fi
 if [ ! -d ~/Pictures/wallpaper ]; then
     mkdir ~/Pictures/wallpaper
-    cp wallpapers/* ~/Pictures/wallpaper
+    cp wallpaper/* ~/Pictures/wallpaper
     echo "Wallpapers installed successfully."
 else
     echo ":: ~/wallpaper folder already exists."

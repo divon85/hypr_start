@@ -72,46 +72,46 @@
         "tooltip-format": "{}",
         "escape": true,
         "return-type": "json",       
-        "exec": "~/.config/scripts/updates.sh",
+        "exec": "~/.dotfiles/scripts/updates.sh",
         "restart-interval": 60,
-        "on-click": "alacritty --class dotfiles-floating -e ~/.config/scripts/installupdates.sh",
-        "on-click-right": "~/.config/.settings/software.sh",
+        "on-click": "alacritty --class dotfiles-floating -e ~/.dotfiles/scripts/installupdates.sh",
+        "on-click-right": "~/.dotfiles/.settings/software.sh",
         "tooltip": false
     },
     
     // Wallpaper
     "custom/wallpaper": {
         "format": "",
-        "on-click": "~/.config/hypr/scripts/wallpaper.sh select",
-        "on-click-right": "~/.config/hypr/scripts/wallpaper.sh",
+        "on-click": "~/.dotfiles/hypr/scripts/wallpaper.sh select",
+        "on-click-right": "~/.dotfiles/hypr/scripts/wallpaper.sh",
         "tooltip": false
     },
 
     // Waybar Themes
     "custom/waybarthemes": {
         "format": "",
-        "on-click": "~/.config/waybar/themeswitcher.sh",
+        "on-click": "~/.dotfiles/waybar/themeswitcher.sh",
         "tooltip": false
     },
     
     // Settings
     "custom/settings": {
         "format": "",
-        "on-click": "alacritty --class dotfiles-floating -e ~/.config/hypr/start-settings.sh",
+        "on-click": "alacritty --class dotfiles-floating -e ~/.dotfiles/hypr/start-settings.sh",
         "tooltip": false
     },
 
     // Keybindings
     "custom/keybindings": {
         "format": "",
-        "on-click": "~/.config/hypr/scripts/keybindings.sh",
+        "on-click": "~/.dotfiles/hypr/scripts/keybindings.sh",
         "tooltip": false
     },
 
     // Filemanager Launcher
     "custom/filemanager": {
         "format": "",
-        "on-click": "~/.config/.settings/filemanager.sh",
+        "on-click": "~/.dotfiles/.settings/filemanager.sh",
         "tooltip": false
     },
 
@@ -132,7 +132,7 @@
     // Browser Launcher
     "custom/browser": {
         "format": "",
-        "on-click": "~/.config/.settings/browser.sh",
+        "on-click": "~/.dotfiles/.settings/browser.sh",
         "tooltip": false
     },    
 
@@ -153,7 +153,7 @@
     // Windows VM
     "custom/windowsvm": {
         "format": "",
-        "on-click": "~/.config/scripts/launchvm.sh",
+        "on-click": "~/.dotfiles/scripts/launchvm.sh",
         "tooltip": false
     },
 
@@ -163,7 +163,7 @@
 "format": "Igor",
         // END APPS LABEL
         "on-click": "rofi -show drun -replace",
-        "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
+        "on-click-right": "~/.dotfiles/hypr/scripts/keybindings.sh",
         "tooltip": false
     },
 
@@ -171,7 +171,7 @@
     "custom/appmenuicon": {
         "format": "",
         "on-click": "rofi -show drun -replace",
-        "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
+        "on-click-right": "~/.dotfiles/hypr/scripts/keybindings.sh",
         "tooltip": false
     },    
 
@@ -288,7 +288,7 @@
         "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
-        "on-click": "~/.config/.settings/networkmanager.sh"
+        "on-click": "~/.dotfiles/.settings/networkmanager.sh"
     },
 
     // Battery

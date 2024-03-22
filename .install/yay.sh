@@ -6,7 +6,10 @@ if sudo pacman -Qs yay > /dev/null ; then
     echo "yay is installed!"
 else
     echo "yay is not installed. Begin the installation!"
-    mkdir ~/Master
+    if [ ! -d ~/Master ]; then
+        echo "Create Master folder for installer"
+        mkdir ~/Master
+    fi
     _installPackagesPacman "base-devel"
     SCRIPT=$(realpath "$0")
     temp_path=$(dirname "$SCRIPT")

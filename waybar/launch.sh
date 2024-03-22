@@ -31,7 +31,7 @@ IFS=';' read -ra arrThemes <<< "$themestyle"
 echo "Theme: ${arrThemes[0]}"
 
 if [ ! -f ~/.dotfiles/waybar/themes${arrThemes[1]}/style.css ]; then
-    themestyle="/ml4w;/ml4w/light"
+    themestyle="/default;/default"
 fi
 
 # ----------------------------------------------------- 
