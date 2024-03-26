@@ -25,12 +25,17 @@ else
 fi
 
 mv .bashrc ~/
+echo ":: .bashrc files moved to the home directory"
 
 mv gtk_files/* ~/
+echo ":: gtk files moved to the home directory"
 
 rm -rf gtk_files
+echo ":: remove the unneeded gtk_files"
 
 rm -rf ~/.config/.install
+rm ~/.config/.install.sh
+echo ":: remove the unneeded installer files and folder from ~/.config"
 
 # Create default folder structure
 xdg-user-dirs-update
