@@ -30,6 +30,8 @@ mv gtk_files/* ~/
 
 rm -rf gtk_files
 
+rm -rf ~/.config/.install
+
 # Create default folder structure
 xdg-user-dirs-update
 echo 

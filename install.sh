@@ -1,6 +1,7 @@
 # Version 1.0
 # ----------------------------------------------------- 
 
+source .install/library.sh
 source .install/required.sh
 source .install/yay.sh
 source .install/packages.sh
