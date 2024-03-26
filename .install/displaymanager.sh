@@ -19,7 +19,7 @@ echo "File /etc/sddm.conf.d/sddm.conf updated."
 if [ -f /usr/share/sddm/themes/sugar-candy/theme.conf ]; then
 
     # Cache file for holding the current wallpaper
-    sudo cp wallpapers/default.jpg /usr/share/sddm/themes/sugar-candy/Backgrounds/current_wallpaper.jpg
+    sudo cp wallpaper/default.jpg /usr/share/sddm/themes/sugar-candy/Backgrounds/current_wallpaper.jpg
     echo "Default wallpaper copied into /usr/share/sddm/themes/sugar-candy/Backgrounds/"
 
     sudo cp sddm/theme.conf /usr/share/sddm/themes/sugar-candy/
