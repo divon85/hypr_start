@@ -36,7 +36,7 @@ echo ":: remove the unneeded gtk_files"
 rsync -a -I . ~/.config/
 
 rm -rf ~/.config/.install
-rm ~/.config/.install.sh
+rm ~/.config/install.sh
 echo ":: remove the unneeded installer files and folder from ~/.config"
 
 # Create default folder structure
