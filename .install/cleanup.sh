@@ -34,6 +34,10 @@ rm -rf gtk_files
 echo ":: remove the unneeded gtk_files"
 
 rsync -a -I . ~/.config/
+echo ":: copy the files"
+
+rsync -a -I wallpaper ~/Pictures/
+echo ":: copy the wallpaper"
 
 rm -rf ~/.config/.install
 rm ~/.config/install.sh
