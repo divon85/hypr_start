@@ -2,8 +2,6 @@
 
 My hyprland installer
 
-use command mv gtk_files/* ~/
-
 Install using ./install.sh
 
 Copy the wallpaper to ~/Pictures/wallpaper

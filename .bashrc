@@ -22,7 +22,7 @@ alias confb='$EDITOR ~/.bashrc'
 alias wifi='nmtui'
 alias rw='~/.config/waybar/reload.sh'
 alias winclass="xprop | grep 'CLASS'"
-alias dot="cd ~/.config"
+alias hypcon="cd ~/.config"
 alias cleanup='~/.config/scripts/cleanup.sh'
 alias clwal='~/.config/sddm/scripts/wallpaper.sh'
 alias chome='~/.config/sddm/scripts/cubo.sh'
@@ -36,6 +36,9 @@ alias exltx='pdflatex main.tex'
 # Start Starship
 eval "$(starship init bash)"
 
+# Pywal
+cat ~/.cache/wal/sequences
+
 # Pfetch
 echo ""
 if [[ $(tty) == *"pts"* ]]; then
@@ -45,21 +48,3 @@ else
 	echo "Start with command Hyprland"
     fi
 fi
-
-# >>> juliaup initialize >>>
-
-# !! Contents within this block are managed by juliaup !!
-
-case ":$PATH:" in
-    *:/home/divon/.juliaup/bin:*)
-        ;;
-
-    *)
-        export PATH=/home/divon/.juliaup/bin${PATH:+:${PATH}}
-        ;;
-esac
-
-# <<< juliaup initialize <<<
-
-# LaTeX
-export PATH="$PATH:/usr/local/texlive/2024/bin/x86_64-linux"

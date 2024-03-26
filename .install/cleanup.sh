@@ -24,10 +24,11 @@ else
     echo ":: bluetooth.service activated successfully."    
 fi
 
-if [ -d ~/dotfiles/hypr/settings/ ] ;then
-    rm -rf ~/dotfiles/hypr/settings
-    echo ":: ~/dotfiles/hypr/settings removed."
-fi
+mv .bashrc ~/
+
+mv gtk_files/* ~/
+
+rm -rf gtk_files
 
 # Create default folder structure
 xdg-user-dirs-update

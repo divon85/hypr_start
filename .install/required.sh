@@ -1,3 +1,7 @@
+# Remove the unnecessary files and folder
+rm -rf .git
+rm README.md
+
 # Synchronize packages
 sudo pacman -Sy
 echo ""
