@@ -1,10 +1,3 @@
-# ------------------------------------------------------
-# Install tty login and issue
-# ------------------------------------------------------
-echo -e "${BLUE}"
-figlet "Cleanup"
-echo -e "${NONE}"
-
 # Check for ttf-ms-fonts
 if [[ $(_isInstalledPacman "ttf-ms-fonts") == 0 ]]; then
     echo "The script has detected ttf-ms-fonts. This can cause conflicts with icons in Waybar."
@@ -31,9 +24,9 @@ else
     echo ":: bluetooth.service activated successfully."    
 fi
 
-if [ -d ~/.dotfiles/hypr/settings/ ] ;then
-    rm -rf ~/.dotfiles/hypr/settings
-    echo ":: ~/.dotfiles/hypr/settings removed."
+if [ -d ~/dotfiles/hypr/settings/ ] ;then
+    rm -rf ~/dotfiles/hypr/settings
+    echo ":: ~/dotfiles/hypr/settings removed."
 fi
 
 # Create default folder structure

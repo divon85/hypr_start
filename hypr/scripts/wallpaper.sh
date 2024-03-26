@@ -1,11 +1,9 @@
 #!/bin/bash
-# Wallpaper Scripts
-
 # Cache file for holding the current wallpaper
 cache_file="$HOME/.cache/current_wallpaper"
 blurred="$HOME/.cache/blurred_wallpaper.png"
 rasi_file="$HOME/.cache/current_wallpaper.rasi"
-blur_file="$HOME/.dotfiles/.settings/blur.sh"
+blur_file="$HOME/.config/.settings/blur.sh"
 
 blur="50x30"
 blur=$(cat $blur_file)
@@ -41,7 +39,7 @@ case $1 in
         selected=$( find "$HOME/Pictures/wallpaper" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec basename {} \; | sort -R | while read rfile
         do
             echo -en "$rfile\x00icon\x1f$HOME/Pictures/wallpaper/${rfile}\n"
-        done | rofi -dmenu -i -replace -config ~/.dotfiles/rofi/config-wallpaper.rasi)
+        done | rofi -dmenu -i -replace -config ~/.config/rofi/config-wallpaper.rasi)
         if [ ! "$selected" ]; then
             echo "No wallpaper selected"
             exit
@@ -70,7 +68,7 @@ newwall=$(echo $wallpaper | sed "s|$HOME/Pictures/wallpaper/||g")
 # ----------------------------------------------------- 
 # Reload waybar with new colors
 # -----------------------------------------------------
-~/.dotfiles/waybar/launch.sh
+~/.config/waybar/launch.sh
 
 # ----------------------------------------------------- 
 # Set the new wallpaper
@@ -110,6 +108,7 @@ echo "* { current-image: url(\"$blurred\", height); }" > "$rasi_file"
 if [ "$1" == "init" ] ;then
     echo ":: Init"
 else
+    sleep 1
     notify-send "Colors and Wallpaper updated" "with image $newwall"
 fi
 

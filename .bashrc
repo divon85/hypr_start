@@ -20,12 +20,12 @@ alias v='$EDITOR'
 alias vs='sudo $EDITOR'
 alias confb='$EDITOR ~/.bashrc'
 alias wifi='nmtui'
-alias rw='~/.dotfiles/waybar/reload.sh'
+alias rw='~/.config/waybar/reload.sh'
 alias winclass="xprop | grep 'CLASS'"
-alias dot="cd ~/.dotfiles"
-alias cleanup='~/.dotfiles/scripts/cleanup.sh'
-alias clwal='~/.dotfiles/sddm/scripts/wallpaper.sh'
-alias chome='~/.dotfiles/sddm/scripts/cubo.sh'
+alias dot="cd ~/.config"
+alias cleanup='~/.config/scripts/cleanup.sh'
+alias clwal='~/.config/sddm/scripts/wallpaper.sh'
+alias chome='~/.config/sddm/scripts/cubo.sh'
 if [ ! -f ~/.bash_history ]; then
     alias chfull='history -c'
 else

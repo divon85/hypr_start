@@ -1,10 +1,3 @@
-#!/bin/bash
-# Setup
-
-echo -e "${BLUE}"
-figlet "Keyboard"
-echo -e "${NONE}"
-
 # Default layout and variants
 keyboard_layout="us"
 
@@ -35,13 +28,18 @@ if [ "$restored" == "1" ]; then
 else
     _confirmKeyboard
     
-    cp .install/templates/keyboard.conf ~/.dotfiles-versions/$version/hypr/conf/keyboard.conf
+    cp .install/templates/keyboard.conf ~/dotfiles-versions/$version/hypr/conf/keyboard.conf
+    cp .install/templates/autostart.sh ~/dotfiles-versions/$version/qtile/autostart.sh
 
     SEARCH="KEYBOARD_LAYOUT"
     REPLACE="$keyboard_layout"
-    sed -i "s/$SEARCH/$REPLACE/g" ~/.dotfiles-versions/$version/hypr/conf/keyboard.conf
+    sed -i "s/$SEARCH/$REPLACE/g" ~/dotfiles-versions/$version/hypr/conf/keyboard.conf
+
+    SEARCH="KEYBOARD_LAYOUT"
+    REPLACE="$keyboard_layout"
+    sed -i "s/$SEARCH/$REPLACE/g" ~/dotfiles-versions/$version/qtile/autostart.sh
 
     echo ""
     echo ":: Keyboard setup updated successfully."
-    echo "PLEASE NOTE: You can update your keyboard layout later in ~/.dotfiles/hypr/conf/keyboard.conf"
+    echo "PLEASE NOTE: You can update your keyboard layout later in ~/dotfiles/hypr/conf/keyboard.conf"
 fi

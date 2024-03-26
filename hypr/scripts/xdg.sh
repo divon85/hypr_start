@@ -1,6 +1,4 @@
 #!/bin/bash
-# XDG script
-
 sleep 1
 
 # kill all possible running xdg-desktop-portals

@@ -1,6 +1,17 @@
+#!/bin/bash
+#  _____ _                                       _ _       _                
+# |_   _| |__   ___ _ __ ___   ___  _____      _(_) |_ ___| |__   ___ _ __  
+#   | | | '_ \ / _ \ '_ ` _ \ / _ \/ __\ \ /\ / / | __/ __| '_ \ / _ \ '__| 
+#   | | | | | |  __/ | | | | |  __/\__ \\ V  V /| | || (__| | | |  __/ |    
+#   |_| |_| |_|\___|_| |_| |_|\___||___/ \_/\_/ |_|\__\___|_| |_|\___|_|    
+#                                                                           
+#
+# ----------------------------------------------------- 
+
+# ----------------------------------------------------- 
 # Default theme folder
 # ----------------------------------------------------- 
-themes_path="$HOME/.dotfiles/waybar/themes"
+themes_path="$HOME/.config/waybar/themes"
 
 # ----------------------------------------------------- 
 # Initialize arrays
@@ -14,10 +25,10 @@ listNames=""
 options=$(find $themes_path -maxdepth 2 -type d)
 for value in $options
 do
-    if [ ! $value == "$HOME/.dotfiles/waybar/themes/assets" ]; then
+    if [ ! $value == "$HOME/.config/waybar/themes/assets" ]; then
         if [ ! $value == "$themes_path" ]; then
             if [ $(find $value -maxdepth 1 -type d | wc -l) = 1 ]; then
-                result=$(echo $value | sed "s#$HOME/.dotfiles/waybar/themes/#/#g")
+                result=$(echo $value | sed "s#$HOME/.config/waybar/themes/#/#g")
                 IFS='/' read -ra arrThemes <<< "$result"
                 listThemes[${#listThemes[@]}]="/${arrThemes[1]};$result"
                 if [ -f $themes_path$result/config.sh ]; then
@@ -35,7 +46,7 @@ done
 # Show rofi dialog
 # ----------------------------------------------------- 
 listNames=${listNames::-2}
-choice=$(echo -e "$listNames" | rofi -dmenu -i -replace -config ~/.dotfiles/rofi/config-themes.rasi -no-show-icons -width 30 -p "Themes" -format i) 
+choice=$(echo -e "$listNames" | rofi -dmenu -i -replace -config ~/.config/rofi/config-themes.rasi -no-show-icons -width 30 -p "Themes" -format i) 
 
 # ----------------------------------------------------- 
 # Set new theme by writing the theme information to ~/.cache/.themestyle.sh
@@ -43,5 +54,5 @@ choice=$(echo -e "$listNames" | rofi -dmenu -i -replace -config ~/.dotfiles/rofi
 if [ "$choice" ]; then
     echo "Loading waybar theme..."
     echo "${listThemes[$choice+1]}" > ~/.cache/.themestyle.sh
-    ~/.dotfiles/waybar/launch.sh
+    ~/.config/waybar/launch.sh
 fi

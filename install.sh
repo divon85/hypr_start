@@ -1,57 +1,11 @@
-#!/bin/bash
-version=$(cat .version/name)
-source .install/includes/colors.sh
-source .install/includes/library.sh
-clear
+# Version 1.0
+# ----------------------------------------------------- 
 
-# Set installation mode
-mode="live"
-if [ ! -z $1 ]; then
-    mode="dev"
-    echo "IMPORTANT: DEV MODE ACTIVATED. "
-    echo "Existing dotfiles folder will not be modified."
-    echo "Symbolic links will not be created."
-fi
-echo -e "${BLUE}"
-cat <<"EOF"
-Hyprland Installation
-EOF
-echo -e "${NONE}"
-
-echo "Version: $version"
-echo "by Igor Novid"
-echo ""
-if [ -d ~/.dotfiles ] ;then
-    echo "The L4F dotfiles installation is available."
-    echo "This script will guide you through the update process."
-else
-    echo "This script will guide you through the installation process of the L4F dotfiles."
-fi
-echo ""
 source .install/required.sh
-source .install/confirmation.sh
 source .install/yay.sh
-source .install/backup.sh
-source .install/preparation.sh
-source .install/installer.sh
-source .install/remove.sh
-source .install/general.sh
-source .install/packages/general-packages.sh
-source .install/install-packages.sh
-source .install/packages/hyprland-packages.sh
-source .install/install-packages.sh
-source .install/wallpaper.sh
+source .install/packages.sh
 source .install/displaymanager.sh
-source .install/issue.sh
-source .install/restore.sh
 source .install/keyboard.sh
-source .install/neovim.sh
-source .install/hook.sh
-source .install/copy.sh
-source .install/init-pywal.sh
-source .install/hyprland-dotfiles.sh
-source .install/settings.sh
-source .install/gtk.sh
-source .install/bashrc.sh
 source .install/cleanup.sh
 source .install/reboot.sh
+sleep 3

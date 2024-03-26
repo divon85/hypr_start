@@ -1,4 +1,11 @@
-" Neovim configuration
+"  _   _                 _            
+" | \ | | ___  _____   _(_)_ __ ___   
+" |  \| |/ _ \/ _ \ \ / / | '_ ` _ \  
+" | |\  |  __/ (_) \ V /| | | | | | | 
+" |_| \_|\___|\___/ \_/ |_|_| |_| |_| 
+"                                     
+" 
+" ----------------------------------------------------- 
 
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching 

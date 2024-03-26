@@ -3,8 +3,8 @@ sudo pacman -Sy
 echo ""
 
 # Check for required packages
-echo ":: Checking for the required packages"
-_installPackagesPacman "rsync" "gum" "figlet";
+echo ":: Checking that required packages for the installation are installed..."
+_installPackagesPacman "rsync" "gum" "figlet" "python";
 echo ""
 
 # Double check rsync
