@@ -77,16 +77,45 @@ transition_type="wipe"
 # transition_type="outer"
 # transition_type="random"
 
-swww img $wallpaper \
-    --transition-bezier .43,1.19,1,.4 \
-    --transition-fps=60 \
-    --transition-type=$transition_type \
-    --transition-duration=0.7 \
-    --transition-pos "$( hyprctl cursorpos )"
+wallpaper_engine=$(cat $HOME/.config/.settings/wallpaper-engine.sh)
+if [ "$wallpaper_engine" == "swww" ] ;then
+    # swww
+    echo ":: Using swww"
+    swww img $wallpaper \
+        --transition-bezier .43,1.19,1,.4 \
+        --transition-fps=60 \
+        --transition-type=$transition_type \
+        --transition-duration=0.7 \
+        --transition-pos "$( hyprctl cursorpos )"
+elif [ "$wallpaper_engine" == "hyprpaper" ] ;then
+    # hyprpaper
+    echo ":: Using hyprpaper"
+    killall hyprpaper
+    wal_tpl=$(cat $HOME/.config/.settings/hyprpaper.tpl)
+    output=${wal_tpl//WALLPAPER/$wallpaper}
+    echo "$output" > $HOME/.config/hypr/hyprpaper.conf
+    hyprpaper &
+else
+    echo ":: Wallpaper Engine disabled"
+fi
+
+if [ "$1" == "init" ] ;then
+    echo ":: Init"
+else
+    sleep 1
+    dunstify "Changing wallpaper ..." "with image $newwall" -h int:value:33 -h string:x-dunst-stack-tag:wallpaper
+    sleep 2
+fi
 
 # ----------------------------------------------------- 
 # Created blurred wallpaper
 # -----------------------------------------------------
+if [ "$1" == "init" ] ;then
+    echo ":: Init"
+else
+    dunstify "Creating blurred version ..." "with image $newwall" -h int:value:66 -h string:x-dunst-stack-tag:wallpaper
+fi
+
 magick $wallpaper -resize 75% $blurred
 echo ":: Resized to 75%"
 if [ ! "$blur" == "0x0" ] ;then
@@ -108,8 +137,7 @@ echo "* { current-image: url(\"$blurred\", height); }" > "$rasi_file"
 if [ "$1" == "init" ] ;then
     echo ":: Init"
 else
-    sleep 1
-    notify-send "Colors and Wallpaper updated" "with image $newwall"
+    dunstify "Wallpaper procedure complete!" "with image $newwall" -h int:value:100 -h string:x-dunst-stack-tag:wallpaper
 fi
 
 echo "DONE!"

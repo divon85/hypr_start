@@ -36,8 +36,35 @@ echo ":: remove the unneeded gtk_files"
 rsync -a -I . ~/.config/
 echo ":: copy the files"
 
-rsync -a -I wallpaper ~/Pictures/
-echo ":: copy the wallpaper"
+if [ ! -d ~/Pictures ]; then
+    mkdir ~/Pictures
+fi
+
+if [ ! -d ~/Pictures/wallpaper ];
+    mkdir ~/Pictures/wallpaper
+    rsync -a -I wallpaper ~/Pictures/
+    echo ":: copy the wallpaper"
+fi
+
+# ------------------------------------------------------
+# Copy default wallpaper files to .cache
+# ------------------------------------------------------
+
+# Cache file for holding the current wallpaper
+cache_file="$HOME/.cache/current_wallpaper"
+rasi_file="$HOME/.cache/current_wallpaper.rasi"
+
+# Create cache file if not exists
+if [ ! -f $cache_file ] ;then
+    touch $cache_file
+    echo "$HOME/Pictures/wallpaper/default.jpg" > "$cache_file"
+fi
+
+# Create rasi file if not exists
+if [ ! -f $rasi_file ] ;then
+    touch $rasi_file
+    echo "* { current-image: url(\"$HOME/Pictures/wallpaper/default.jpg\", height); }" > "$rasi_file"
+fi
 
 rm -rf ~/.config/.install
 rm ~/.config/install.sh

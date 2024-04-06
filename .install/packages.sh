@@ -49,12 +49,15 @@ packagesPacman=(
     "imagemagick"
     "guvcview"
     "hyprland"
+    "hyprpaper"
     "xdg-desktop-portal-hyprland"
     "waybar"
     "grim"
     "slurp"
     "swappy"
     "cliphist"
+    "hyprlock"
+    "hypridle"
 );
 
 packagesYay=(
@@ -67,8 +70,6 @@ packagesYay=(
     "wlogout"
     "nwg-look"
     "emote"
-    "hypridle"
-    "hyprlock"
     "google-chrome"
     "visual-studio-code-bin"
 );
