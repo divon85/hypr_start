@@ -1,3 +1,10 @@
+# ------------------------------------------------------
+# Install tty login and issue
+# ------------------------------------------------------
+echo -e "${GREEN}"
+figlet "Cleanup"
+echo -e "${NONE}"
+
 # Check for ttf-ms-fonts
 if [[ $(_isInstalledPacman "ttf-ms-fonts") == 0 ]]; then
     echo "The script has detected ttf-ms-fonts. This can cause conflicts with icons in Waybar."
@@ -24,51 +31,10 @@ else
     echo ":: bluetooth.service activated successfully."    
 fi
 
-mv .bashrc ~/
-echo ":: .bashrc files moved to the home directory"
-
-mv gtk_files/* ~/
-echo ":: gtk files moved to the home directory"
-
-rm -rf gtk_files
-echo ":: remove the unneeded gtk_files"
-
-rsync -a -I . ~/.config/
-echo ":: copy the files"
-
-if [ ! -d ~/Pictures ]; then
-    mkdir ~/Pictures
+if [ -d ~/dotfiles/hypr/settings/ ] ;then
+    rm -rf ~/dotfiles/hypr/settings
+    echo ":: ~/dotfiles/hypr/settings removed."
 fi
-
-if [ ! -d ~/Pictures/wallpaper ];
-    mkdir ~/Pictures/wallpaper
-    rsync -a -I wallpaper ~/Pictures/
-    echo ":: copy the wallpaper"
-fi
-
-# ------------------------------------------------------
-# Copy default wallpaper files to .cache
-# ------------------------------------------------------
-
-# Cache file for holding the current wallpaper
-cache_file="$HOME/.cache/current_wallpaper"
-rasi_file="$HOME/.cache/current_wallpaper.rasi"
-
-# Create cache file if not exists
-if [ ! -f $cache_file ] ;then
-    touch $cache_file
-    echo "$HOME/Pictures/wallpaper/default.jpg" > "$cache_file"
-fi
-
-# Create rasi file if not exists
-if [ ! -f $rasi_file ] ;then
-    touch $rasi_file
-    echo "* { current-image: url(\"$HOME/Pictures/wallpaper/default.jpg\", height); }" > "$rasi_file"
-fi
-
-rm -rf ~/.config/.install
-rm ~/.config/install.sh
-echo ":: remove the unneeded installer files and folder from ~/.config"
 
 # Create default folder structure
 xdg-user-dirs-update

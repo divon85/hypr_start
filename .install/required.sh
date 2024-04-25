@@ -1,15 +1,14 @@
-# Remove the unnecessary files and folder
-rm -rf .git
-rm README.md
+# ------------------------------------------------------
+# Check for required packages to run the installation
+# ------------------------------------------------------
 
 # Synchronize packages
 sudo pacman -Sy
-echo ""
+echo
 
 # Check for required packages
-echo ":: Checking that required packages for the installation are installed..."
+echo "Checking that required packages for the installation are installed..."
 _installPackagesPacman "rsync" "gum" "figlet" "python";
-echo ""
 
 # Double check rsync
 if ! command -v rsync &> /dev/null; then
@@ -18,4 +17,4 @@ if ! command -v rsync &> /dev/null; then
 else
     echo ":: rsync double checked"
 fi
-echo ""
+echo

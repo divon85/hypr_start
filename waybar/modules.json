@@ -5,7 +5,7 @@
 // |_|  |_|\___/ \__,_|\__,_|_|\___||___/ 
 //                                        
 //  
-// by Igor Novid
+// by Stephan Raabe (2023) 
 // ----------------------------------------------------- 
 //
 {
@@ -21,9 +21,7 @@
 			"default": ""
         },
         "persistent-workspaces": {
-            // START WORKSPACES
-    "*": 1
-            // END WORKSPACES
+            "*": 5
         }       
     },
 
@@ -58,6 +56,18 @@
         "separate-outputs": true
     },
 
+    // ML4W Welcome App
+    "custom/ml4w-welcome": {
+        "on-click": "~/dotfiles/apps/ML4W_Welcome-x86_64.AppImage",
+        "format": " ",
+        "tooltip": false
+    },
+
+    // Empty
+    "custom/empty": {
+        "format": ""
+    },
+
     // Youtube Subscriber Count
     "custom/youtube": {
         "format": " {}",
@@ -70,9 +80,9 @@
     // Cliphist
     "custom/cliphist": {
         "format": "",
-        "on-click": "sleep 0.1 && =/.config/scripts/cliphist.sh",
-        "on-click-right": "sleep 0.1 && =/.config/scripts/cliphist.sh d",
-        "on-click-middle": "sleep 0.1 && =/.config/scripts/cliphist.sh w",
+        "on-click": "sleep 0.1 && ~/dotfiles/scripts/cliphist.sh",
+        "on-click-right": "sleep 0.1 && ~/dotfiles/scripts/cliphist.sh d",
+        "on-click-middle": "sleep 0.1 && ~/dotfiles/scripts/cliphist.sh w",
         "tooltip": false
     },
 
@@ -82,46 +92,46 @@
         "tooltip-format": "{}",
         "escape": true,
         "return-type": "json",       
-        "exec": "~/.config/scripts/updates.sh",
+        "exec": "~/dotfiles/scripts/updates.sh",
         "restart-interval": 60,
-        "on-click": "alacritty --class dotfiles-floating -e ~/.config/scripts/installupdates.sh",
-        "on-click-right": "~/.config/.settings/software.sh",
+        "on-click": "alacritty --class dotfiles-floating -e ~/dotfiles/scripts/installupdates.sh",
+        "on-click-right": "~/dotfiles/.settings/software.sh",
         "tooltip": false
     },
     
     // Wallpaper
     "custom/wallpaper": {
         "format": "",
-        "on-click": "~/.config/hypr/scripts/wallpaper.sh select",
-        "on-click-right": "~/.config/hypr/scripts/wallpaper.sh",
+        "on-click": "~/dotfiles/hypr/scripts/wallpaper.sh select",
+        "on-click-right": "~/dotfiles/hypr/scripts/wallpaper.sh",
         "tooltip": false
     },
 
     // Waybar Themes
     "custom/waybarthemes": {
         "format": "",
-        "on-click": "~/.config/waybar/themeswitcher.sh",
+        "on-click": "~/dotfiles/waybar/themeswitcher.sh",
         "tooltip": false
     },
     
     // Settings
     "custom/settings": {
         "format": "",
-        "on-click": "alacritty --class dotfiles-floating -e ~/.config/hypr/start-settings.sh",
+        "on-click": "~/dotfiles/apps/ML4W_Dotfiles_Settings-x86_64.AppImage",
         "tooltip": false
     },
 
     // Keybindings
     "custom/keybindings": {
         "format": "",
-        "on-click": "~/.config/hypr/scripts/keybindings.sh",
+        "on-click": "~/dotfiles/hypr/scripts/keybindings.sh",
         "tooltip": false
     },
 
     // Filemanager Launcher
     "custom/filemanager": {
         "format": "",
-        "on-click": "~/.config/.settings/filemanager.sh",
+        "on-click": "~/dotfiles/.settings/filemanager.sh",
         "tooltip": false
     },
 
@@ -142,7 +152,7 @@
     // Browser Launcher
     "custom/browser": {
         "format": "",
-        "on-click": "~/.config/.settings/browser.sh",
+        "on-click": "~/dotfiles/.settings/browser.sh",
         "tooltip": false
     },    
 
@@ -163,17 +173,17 @@
     // Windows VM
     "custom/windowsvm": {
         "format": "",
-        "on-click": "~/.config/scripts/launchvm.sh",
+        "on-click": "~/dotfiles/scripts/launchvm.sh",
         "tooltip": false
     },
 
     // Rofi Application Launcher
     "custom/appmenu": {
         // START APPS LABEL
-"format": "Igor",
+        "format": "Apps",
         // END APPS LABEL
-        "on-click": "rofi -show drun -replace",
-        "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
+        "on-click": "sleep 0.2;rofi -show drun -replace",
+        "on-click-right": "~/dotfiles/hypr/scripts/keybindings.sh",
         "tooltip": false
     },
 
@@ -181,7 +191,7 @@
     "custom/appmenuicon": {
         "format": "",
         "on-click": "rofi -show drun -replace",
-        "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
+        "on-click-right": "~/dotfiles/hypr/scripts/keybindings.sh",
         "tooltip": false
     },    
 
@@ -211,6 +221,7 @@
 
     // Clock
     "clock": {
+        "format": "{:%H:%M %a}",
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         // START CLOCK FORMAT
@@ -270,7 +281,7 @@
         "orientation": "horizontal",
         "modules": [
             // START CHATGPT TOOGLE
-//"custom/chatgpt",
+            "custom/chatgpt",
             // END CHATGPT TOOGLE
             "custom/settings",
             "custom/waybarthemes",
@@ -298,7 +309,7 @@
         "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
-        "on-click": "~/.config/.settings/networkmanager.sh"
+        "on-click": "~/dotfiles/.settings/networkmanager.sh"
     },
 
     // Battery
@@ -327,13 +338,13 @@
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", " ", " "]
+            "headphone": " ",
+            "hands-free": " ",
+            "headset": " ",
+            "phone": " ",
+            "portable": " ",
+            "car": " ",
+            "default": [" ", " ", " "]
         },
         "on-click": "pavucontrol"
     },

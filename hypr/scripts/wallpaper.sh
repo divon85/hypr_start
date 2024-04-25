@@ -1,9 +1,19 @@
 #!/bin/bash
+#                _ _                              
+# __      ____ _| | |_ __   __ _ _ __   ___ _ __  
+# \ \ /\ / / _` | | | '_ \ / _` | '_ \ / _ \ '__| 
+#  \ V  V / (_| | | | |_) | (_| | |_) |  __/ |    
+#   \_/\_/ \__,_|_|_| .__/ \__,_| .__/ \___|_|    
+#                   |_|         |_|               
+#  
+# by Stephan Raabe (2023) 
+# ----------------------------------------------------- 
+
 # Cache file for holding the current wallpaper
 cache_file="$HOME/.cache/current_wallpaper"
 blurred="$HOME/.cache/blurred_wallpaper.png"
 rasi_file="$HOME/.cache/current_wallpaper.rasi"
-blur_file="$HOME/.config/.settings/blur.sh"
+blur_file="$HOME/dotfiles/.settings/blur.sh"
 
 blur="50x30"
 blur=$(cat $blur_file)
@@ -11,13 +21,13 @@ blur=$(cat $blur_file)
 # Create cache file if not exists
 if [ ! -f $cache_file ] ;then
     touch $cache_file
-    echo "$HOME/Pictures/wallpaper/default.jpg" > "$cache_file"
+    echo "$HOME/wallpaper/default.jpg" > "$cache_file"
 fi
 
 # Create rasi file if not exists
 if [ ! -f $rasi_file ] ;then
     touch $rasi_file
-    echo "* { current-image: url(\"$HOME/Pictures/wallpaper/default.jpg\", height); }" > "$rasi_file"
+    echo "* { current-image: url(\"$HOME/wallpaper/default.jpg\", height); }" > "$rasi_file"
 fi
 
 current_wallpaper=$(cat "$cache_file")
@@ -26,30 +36,31 @@ case $1 in
 
     # Load wallpaper from .cache of last session 
     "init")
+        sleep 1
         if [ -f $cache_file ]; then
             wal -q -i $current_wallpaper
         else
-            wal -q -i ~/Pictures/wallpaper/
+            wal -q -i ~/wallpaper/
         fi
     ;;
 
     # Select wallpaper with rofi
     "select")
         sleep 0.2
-        selected=$( find "$HOME/Pictures/wallpaper" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec basename {} \; | sort -R | while read rfile
+        selected=$( find "$HOME/wallpaper" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -exec basename {} \; | sort -R | while read rfile
         do
-            echo -en "$rfile\x00icon\x1f$HOME/Pictures/wallpaper/${rfile}\n"
-        done | rofi -dmenu -i -replace -config ~/.config/rofi/config-wallpaper.rasi)
+            echo -en "$rfile\x00icon\x1f$HOME/wallpaper/${rfile}\n"
+        done | rofi -dmenu -i -replace -config ~/dotfiles/rofi/config-wallpaper.rasi)
         if [ ! "$selected" ]; then
             echo "No wallpaper selected"
             exit
         fi
-        wal -q -i ~/Pictures/wallpaper/$selected
+        wal -q -i ~/wallpaper/$selected
     ;;
 
     # Randomly select wallpaper 
     *)
-        wal -q -i ~/Pictures/wallpaper/
+        wal -q -i ~/wallpaper/
     ;;
 
 esac
@@ -63,12 +74,12 @@ echo ":: Wallpaper: $wallpaper"
 # ----------------------------------------------------- 
 # get wallpaper image name
 # ----------------------------------------------------- 
-newwall=$(echo $wallpaper | sed "s|$HOME/Pictures/wallpaper/||g")
+newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
 
 # ----------------------------------------------------- 
 # Reload waybar with new colors
 # -----------------------------------------------------
-~/.config/waybar/launch.sh
+~/dotfiles/waybar/launch.sh
 
 # ----------------------------------------------------- 
 # Set the new wallpaper
@@ -77,7 +88,7 @@ transition_type="wipe"
 # transition_type="outer"
 # transition_type="random"
 
-wallpaper_engine=$(cat $HOME/.config/.settings/wallpaper-engine.sh)
+wallpaper_engine=$(cat $HOME/dotfiles/.settings/wallpaper-engine.sh)
 if [ "$wallpaper_engine" == "swww" ] ;then
     # swww
     echo ":: Using swww"
@@ -91,9 +102,9 @@ elif [ "$wallpaper_engine" == "hyprpaper" ] ;then
     # hyprpaper
     echo ":: Using hyprpaper"
     killall hyprpaper
-    wal_tpl=$(cat $HOME/.config/.settings/hyprpaper.tpl)
+    wal_tpl=$(cat $HOME/dotfiles/.settings/hyprpaper.tpl)
     output=${wal_tpl//WALLPAPER/$wallpaper}
-    echo "$output" > $HOME/.config/hypr/hyprpaper.conf
+    echo "$output" > $HOME/dotfiles/hypr/hyprpaper.conf
     hyprpaper &
 else
     echo ":: Wallpaper Engine disabled"
@@ -122,7 +133,6 @@ if [ ! "$blur" == "0x0" ] ;then
     magick $blurred -blur $blur $blurred
     echo ":: Blurred"
 fi
-
 
 # ----------------------------------------------------- 
 # Write selected wallpaper into .cache files
