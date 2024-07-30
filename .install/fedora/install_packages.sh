@@ -13,6 +13,7 @@ installer_packages=(
     "qutebrowser"
     "fontawesome-6-free-fonts"
     "emacs"
+    "code"
     "vim"
     "vim-enhanced"
     "python3-pip"
