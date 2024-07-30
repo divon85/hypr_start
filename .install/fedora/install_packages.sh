@@ -12,6 +12,7 @@ installer_packages=(
     "hyprlock"
     "qutebrowser"
     "fontawesome-6-free-fonts"
+    "emacs"
     "vim"
     "vim-enhanced"
     "python3-pip"
