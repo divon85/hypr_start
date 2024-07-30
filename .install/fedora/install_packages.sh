@@ -23,6 +23,8 @@ installer_packages=(
     "wlogout"
     "python3-gobject" 
     "gtk4"
+    "vlc"
+    "mpv"
 )
 
 # PLEASE NOTE: Add more packages at the end of the following command
