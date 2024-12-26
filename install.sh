@@ -30,12 +30,12 @@ source install/includes/checkdistro.sh
 # ----------------------------------------------------- 
 # Load Library for used distro
 # ----------------------------------------------------- 
-source install/$installer/library.sh
+source install/arch/library.sh
 
 # ----------------------------------------------------- 
 # Install required packages
 # ----------------------------------------------------- 
-source install/$installer/install_required.sh
+source install/arch/install_required.sh
 
 # ----------------------------------------------------- 
 # Confirm Start
@@ -50,7 +50,7 @@ source install/includes/preparation.sh
 # ----------------------------------------------------- 
 # Install Hyprland Packages
 # ----------------------------------------------------- 
-source install/$installer/install_packages.sh
+source install/arch/install_packages.sh
 
 # ----------------------------------------------------- 
 # Create Backup
