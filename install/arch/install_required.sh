@@ -12,7 +12,6 @@ installer_packages=(
     "git"
     "figlet"
     "sed"
-    "vim"
     "xdg-user-dirs"
     "man-pages"
     "networkmanager"

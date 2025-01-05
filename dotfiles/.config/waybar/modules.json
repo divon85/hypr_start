@@ -21,7 +21,7 @@
 			"default": ""
         },
         "persistent-workspaces": {
-             "*": 5
+             "*": 1
         }       
     },
 
@@ -153,6 +153,13 @@
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": [" ", " ", " ", " ", " "]
+    },
+
+    // Backlight
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
 
     // Pulseaudio
