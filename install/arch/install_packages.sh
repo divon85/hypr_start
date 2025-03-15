@@ -17,6 +17,7 @@ installer_packages=(
     "qt5-wayland" 
     "qt6-wayland"
     "waybar"
+
     # System
     "rofi-wayland"
     "alacritty"
@@ -32,6 +33,10 @@ installer_packages=(
     "libadwaita"
     "jq"
     "python-gobject"
+    "brightnessctl"
+    "networkmanager"
+    "evince"
+    "celluloid"
 )
 
 installer_yay=(
