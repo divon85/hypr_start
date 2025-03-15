@@ -3,19 +3,12 @@
 # ----------------------------------------------------- 
 
 installer_packages=(
-    "pacman-contrib"
     "wget"
-    "zip"
     "unzip"
     "gum"
     "rsync"
-    "git"
     "figlet"
-    "sed"
-    "xdg-user-dirs"
-    "man-pages"
-    "networkmanager"
-    "pip"
+    "git"
 )
 
 echo ":: Installing on $distro"

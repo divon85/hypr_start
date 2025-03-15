@@ -54,4 +54,4 @@ if [ -z $distro ] ;then
     fi
 fi
 
-echo "$distro" > dotfiles/.config/ml4w/settings/distro
+echo "$distro" > dotfiles/.config/mine/settings/distro

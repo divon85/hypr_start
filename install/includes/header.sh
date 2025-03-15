@@ -16,4 +16,3 @@ Mine starter based on ML4W HYPRLAND STARTER PACKAGE
 EOF
 echo "Version: $version"
 echo -e "${NONE}"
-

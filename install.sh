@@ -15,32 +15,32 @@ version=$(cat install/version)
 # # ----------------------------------------------------- 
 # # Library
 # # ----------------------------------------------------- 
-# source install/includes/library.sh
+source install/includes/library.sh
 
 # # ----------------------------------------------------- 
 # # Header
 # # ----------------------------------------------------- 
-# source install/includes/header.sh
+source install/includes/header.sh
 
-# # ----------------------------------------------------- 
-# # Check supported Linux distribution
-# # ----------------------------------------------------- 
-# source install/includes/checkdistro.sh
+# ----------------------------------------------------- 
+# Check supported Linux distribution
+# ----------------------------------------------------- 
+source install/includes/checkdistro.sh
 
-# # ----------------------------------------------------- 
-# # Load Library for used distro
-# # ----------------------------------------------------- 
-# source install/arch/library.sh
+# ----------------------------------------------------- 
+# Load Library for used distro
+# ----------------------------------------------------- 
+source install/$installer/library.sh
 
-# # ----------------------------------------------------- 
-# # Install required packages
-# # ----------------------------------------------------- 
-# source install/arch/install_required.sh
+# ----------------------------------------------------- 
+# Install required packages
+# ----------------------------------------------------- 
+source install/$installer/install_required.sh
 
-# # ----------------------------------------------------- 
-# # Confirm Start
-# # ----------------------------------------------------- 
-# source install/includes/confirm.sh
+# ----------------------------------------------------- 
+# Confirm Start
+# ----------------------------------------------------- 
+source install/includes/confirm.sh
 
 # # ----------------------------------------------------- 
 # # Preparation
