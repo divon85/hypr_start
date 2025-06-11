@@ -11,17 +11,20 @@ installer_packages=(
     "noto-fonts-cjk"
     "noto-fonts-emoji"
     "noto-fonts"
-    "xdg-desktop-portal-hyprland" 
-    "libnotify" 
+    "noto-fonts-extra"
+    "xdg-desktop-portal-hyprland"
+    "xdg-desktop-portal-gtk"
+    "xdg-user-dirs"
+    "libnotify"
     "dunst"
-    "qt5-wayland" 
+    "qt5-wayland"
     "qt6-wayland"
     "waybar"
 
     # System
     "rofi-wayland"
     "alacritty"
-    "thunar"
+    "nautilus"
     "qutebrowser"
     "ttf-font-awesome"
     "fastfetch"
@@ -37,6 +40,10 @@ installer_packages=(
     "networkmanager"
     "evince"
     "celluloid"
+    "brightnessctl"
+    "zip"
+    "zsh-completion"
+    "zsh"
 )
 
 installer_yay=(
