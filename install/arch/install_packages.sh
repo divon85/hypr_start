@@ -47,7 +47,9 @@ installer_packages=(
 )
 
 installer_yay=(
-    "wlogout" 
+    "wlogout"
+    "visual-studio-code-bin"
+    "microsoft-edge-dev-bin"
 )
 
 # PLEASE NOTE: Add more packages at the end of the following command
