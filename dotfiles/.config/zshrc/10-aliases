@@ -1,0 +1,43 @@
+# -----------------------------------------------------
+# ALIASES
+# -----------------------------------------------------
+
+# -----------------------------------------------------
+# General
+# -----------------------------------------------------
+alias c='clear'
+alias shutdown='systemctl poweroff'
+alias v='$EDITOR'
+alias vim='$EDITOR'
+alias relob='source ~/.zshrc'
+alias wifi='nmtui'
+if [ -f ~/.zsh_history ]; then
+    alias histc='rm ~/.zsh_history && history -c'
+else
+    alias histc='history -c'
+fi
+
+if [ -f ~/.zsh_history ]; then
+    alias turnoff='rm ~/.zsh_history && history -c && sudo shutdown -h now'
+else
+    alias turnoff='history -c && sudo shutdown -h now'
+fi
+
+# -----------------------------------------------------
+# Git
+# -----------------------------------------------------
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit -m"
+alias gp="git push"
+alias gpl="git pull"
+alias gst="git stash"
+alias gsp="git stash; git pull"
+alias gfo="git fetch origin"
+alias gcheck="git checkout"
+alias gcredential="git config credential.helper store"
+
+# -----------------------------------------------------
+# Scripts
+# -----------------------------------------------------
+alias ascii='~/.config/LiF/scripts/figlet.sh'
